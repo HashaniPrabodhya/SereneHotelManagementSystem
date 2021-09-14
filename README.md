@@ -34,6 +34,7 @@ Functions of the Banquet hall Management
 •	Generate report  
 
 
+
 3.Room Reservation System 
 
 Room reservation system aims to provide an efficient and convenient way of reserving rooms for customers. Customer can view available rooms and view detailed information of rooms. Customer can select the check in and check out dates and time and get available rooms according to that date. Customer can make a reservation online for available rooms and user can cancel or change the reservation online. Manager can add or delete rooms on availability. Manager can view customer details including checking and checkout dates.
