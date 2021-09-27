@@ -280,6 +280,14 @@ background-color:#34495E; /*#5D6D7E*/
 <th><b/>Room<br/><b/>Status</th>
 <th><tab><tab><b/>Actions</th>
 </tr>
+
+
+<!-- Search method -->
+
+
+
+
+
 <%
 try{
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
