@@ -1,4 +1,4 @@
-# Serene Hotels
+# Hotel Management Sysyem Web Application
 
 Old Repository link: https://github.com/HashaniPrabodhya/SPMSereneHotels
 
