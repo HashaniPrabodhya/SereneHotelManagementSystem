@@ -391,8 +391,11 @@ function closeNav() {
 <Center><h2 style="color:white;"><b>Daily Attendance</b></h2></Center>
 <br/>
 <br/>
-<center><div class= "del">
-    <select name="dep" id="dep" align="middle" hspace="70" margin = "10%" style="background-color:#99ff99">
+<center>
+
+    <form >
+      <input type="text" size="80px"  id="datepick" name="search" value= "Choose Date" required align="middle" hspace="70" style="background-color:#99ff99">
+      <select name="search2" id="dep" align="middle" hspace="70" margin = "10%" style="background-color:#99ff99">
  
     <option value="F">Select Department</option>
  
@@ -416,13 +419,17 @@ function closeNav() {
     
     <option value="IT">IT Department</option>
     </select>
+      
+      <button type="submit" name="search"><i class="fa fa-search" ></i></button>
+    </form>
 
- <input type="text" size="80px"  id="datepick" name="date" value= "2021.08.22" required align="middle" hspace="70" style="background-color:#99ff99">
+    
+ 
 <button class="but" type="submit"   name="getA" style="background-color:#00ff00;" align="middle" hspace="70" >Get Attendance</button>
 </div></center>
 
 <br/><br/> <br/><br/><br/>
- <div id ="list1">
+
   <center>   
      <table border="1">
 <tr>
@@ -437,8 +444,19 @@ function closeNav() {
 try{
 connection = DriverManager.getConnection(connectionUrl, userid, password);
 statement=connection.createStatement();
-String sql ="select * from attendance";
+String query = request.getParameter("search");
+String query2 = request.getParameter("search2");
+String sql;
+
+if(query != null){
+	sql ="select * from attendance where date like '%"+query+"%' OR dep like '%"+query2+"%'";
+}
+
+else{
+	sql ="select * from attendance";
+}
 resultSet = statement.executeQuery(sql);
+int i=0;
 while(resultSet.next()){
 %>
 <tr>
@@ -457,7 +475,7 @@ e.printStackTrace();
 }
 %>
 </table>
- </div>
+
 <br/><br/><br/>
 <center><button onclick="print1()" class="sub" type="submit"  name="down" style="background-color:#66e0ff;"  ><b>Download</b></button></center>
 <script>

@@ -6,7 +6,7 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%
-String sid = request.getParameter("sid");
+
 String driver = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3306/staff_attendance";
 
@@ -367,14 +367,15 @@ function closeNav() {
 <Center><h2 style="color:white;"><b>Daily Attendance</b></h2></Center>
 <br/>
 <br/>
-<center><div class= "del">
-    <select name="dep" id="dep" align="middle" hspace="70" margin = "10%" style="background-color:#99ff99">
+<center>
+
+  <select  id="dep" align="middle" hspace="70" margin = "10%" style="background-color:#99ff99">
  
-       <option value="H">Housekeeping Department</option>
+    <option value="H">Select Department</option>
  
     <option value="F">Front Office Department</option>
  
-
+    <option value="F">Housekeeping Department</option>
  
     <option value="FB">Food and Beverage Service Department</option>
  
@@ -393,12 +394,13 @@ function closeNav() {
     <option value="IT">IT Department</option>
     </select>
 
- <input type="text" size="50px"  id="datepick" name="date" value= "2021.08.22" required align="middle" hspace="70" style="background-color:#99ff99; ">
-<button  type="submit"  name="getA" style="background-color:#00ff00;" align="middle" hspace="70" >Get Attendance</button>
-</div></center>
+ <input type="text" size="50px"  id="datepick" name="searchA" value= "2021.08.22" required align="middle" hspace="70" style="background-color:#99ff99; ">
+
+ <button  type="submit"  name="searchA" style="background-color:#00ff00;" align="middle" hspace="70" >Get Attendance</button>
+</center>
 
 <br/><br/> <br/><br/><br/>
- <div class=list>
+
   <center>   
      <table border="1" style="color:white;">
 <tr>
@@ -414,10 +416,21 @@ function closeNav() {
 try{
 connection = DriverManager.getConnection(connectionUrl, userid, password);
 statement=connection.createStatement();
-String sql ="select * from attendance";
+String query = request.getParameter("searchA");
+String sql;
+
+if(query != null){
+	sql ="select * from attendance where dep like '%"+searchA+"%' ";
+}
+
+else{
+	sql ="select * from attendance";
+}
 resultSet = statement.executeQuery(sql);
+int i=0;
 while(resultSet.next()){
 %>
+
 <tr>
 <td><%=resultSet.getString("sid") %></td>
 <td><%=resultSet.getString("name") %></td>
@@ -434,7 +447,7 @@ e.printStackTrace();
 }
 %>
 </table></center>
- </div>
+
 
 </body>
 </html>
