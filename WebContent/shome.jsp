@@ -419,9 +419,9 @@ function closeNav() {
 </script>
 
   <div class="search-container">
-    <form method="post" action="search.jsp">
+    <form >
       <input type="text" size="30px" placeholder="Search.." name="search" style="margin-left:40%;">
-      <button type="submit"><i class="fa fa-search" ></i></button>
+      <button type="submit" name="search"><i class="fa fa-search" ></i></button>
     </form>
   </div>
 
@@ -430,19 +430,29 @@ function closeNav() {
 <center>
 <table border="1"  style="background-color:#8C98C1; color:white;" >
 <tr>
-<td>Staff ID</td>
-<td>First name</td>
-<td><tab><tab>Action</td>
+<th>Staff ID</th>
+<th>First name</th>
+<th><tab><tab>Action</th>
 </tr>
 <%
 try{
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
 statement=connection.createStatement();
-String sql ="select * from staff_details";
+String query = request.getParameter("search");
+String sql;
+
+if(query != null){
+	sql ="select * from staff_details where sid like '%"+query+"%' ";
+}
+
+else{
+	sql ="select * from staff_details";
+}
 resultSet = statement.executeQuery(sql);
 int i=0;
 while(resultSet.next()){
 %>
+
 <tr>
 <td><%=resultSet.getString("sid") %></td>
 <td><%=resultSet.getString("fname") %></td>

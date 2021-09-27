@@ -374,15 +374,13 @@ th, td{
 </head>
 <body style="background-color:#0D1E52;">
 
-
+<div id="printme">
   
-
-
 <center><h1 style="color:white;"><b>Staff Managment</b></h1></center>
 
 <p style="width:50%;margin:0% 25%;">Date & Time : <%=new Date().toString()%> </p>
 <center>
-<div id="list">
+
 <table border="1"  style="background-color:#8C98C1; color:white;" >
 <tr>
 <td>Staff ID</td>
@@ -412,22 +410,23 @@ e.printStackTrace();
 %>
 </table>
 </div>
-<button onclick="print()">Download</button>
-<script>
+<button onclick="generatePDf()">Download</button>
 
-function print(){
-var element = document.getElementById("list");
-var opt = {
-  margin:       1,
-  filename:     'StaffReport.pdf',
-  image:        { type: 'jpeg', quality: 0.98 },
-  html2canvas:  { scale: 2 },
-  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-};
- 
-// New Promise-based usage:
-html2pdf().from(element).set(opt).save();
-}
+<script src="/html2pdf/js/html2pdf.bundle.min.js"></script>
+<script type="text/javascript">
+  function generatePDF() {
+    const element = document.getElementById("printme");
+  //const sideicon= document.getElementByClassName("sideicon");
+
+    setTimeout(() => {
+        html2pdf(element, {
+      margin:      [10,2,10,2],
+      filename:    'staff.pdf',
+      html2canvas: {scale:2 , ignoreElements: sideicon, logging:true, dpi:1200, letterRendering: true }'
+      jsPDF:       {unit:'mm', format:'letter', orientation:'landscape'}
+   });
+         }, 100);
+     }
 </script>
 </body>
 </html>
