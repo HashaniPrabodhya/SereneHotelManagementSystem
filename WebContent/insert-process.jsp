@@ -5,7 +5,7 @@ pageEncoding="ISO-8859-1"%>
 <%@page import="java.sql.*,java.util.*"%>
 
 <%
-int sid=Integer.parseInt(request.getParameter("sid"));
+
 String fname=request.getParameter("fname");
 String lname=request.getParameter("lname");
 String dob=request.getParameter("dob");
@@ -24,7 +24,7 @@ Class.forName("com.mysql.jdbc.Driver");
 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/staff_managment", "root", "jami1998");
 Statement st=conn.createStatement();
 
-int i=st.executeUpdate("insert into staff_details values(0,'"+fname+"','"+lname+"','"+dob+"','"+gender+"','"+email+"',+phone+,'"+nic+"','"+address+"',+salary+,'"+job+"','"+dep+"')");
+int i=st.executeUpdate("insert into staff_details(fname,lname,dob,gender,email,phone,nic,address,salary,job,dep,) values('"+fname+"','"+lname+"','"+dob+"','"+gender+"','"+email+"',+phone+,'"+nic+"','"+address+"',+salary+,'"+job+"','"+dep+"')");
 out.println("Data is successfully inserted!");
 }
 catch(Exception e)

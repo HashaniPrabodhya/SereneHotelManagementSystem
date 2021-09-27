@@ -364,90 +364,34 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 </script>
-<Center><h2 style="color:white;"><b>Daily Attendance</b></h2></Center>
+<Center><h2 style="color:white;"><b>Mark Daily Attendance</b></h2></Center>
 <br/>
 <br/>
-<center>
-
-  <select  id="dep" align="middle" hspace="70" margin = "10%" style="background-color:#99ff99">
- 
-    <option value="H">Select Department</option>
- 
-    <option value="F">Front Office Department</option>
- 
-    <option value="F">Housekeeping Department</option>
- 
-    <option value="FB">Food and Beverage Service Department</option>
- 
-    <option value="K">Kitchen or Food Production Department</option>
- 
-    <option value="A">Accounts and Credits Department</option>
- 
-    <option value="E">Engineering and Maintenance Department</option>
- 
-    <option value="HR">Human Resource Department</option>
-    
-    <option value="S">Security Department</option>
-    
-    <option value="P">Purchase Department</option>
-    
-    <option value="IT">IT Department</option>
-    </select>
-
- <input type="text" size="50px"  id="datepick" name="searchA" value= "2021.08.22" required align="middle" hspace="70" style="background-color:#99ff99; ">
-
- <button  type="submit"  name="searchA" style="background-color:#00ff00;" align="middle" hspace="70" >Get Attendance</button>
-</center>
 
 <br/><br/> <br/><br/><br/>
-
-  <center>   
-     <table border="1" style="color:white;">
-<tr>
-<td style="color:#41E6CE;"><b>Staff ID</b></td>
-<td style="color:#41E6CE;"><b>Name</b></td>
-<td style="color:#41E6CE;"><b>Date</b></td>
-<td style="color:#41E6CE;"><b>Department</b></td>
-<td style="color:#41E6CE;"><b>In Time</b></td>
-<td style="color:#41E6CE;"><b>Out Time</b></td>
-
-</tr>
-<%
-try{
-connection = DriverManager.getConnection(connectionUrl, userid, password);
-statement=connection.createStatement();
-String query = request.getParameter("searchA");
-String sql;
-
-if(query != null){
-	sql ="select * from attendance where dep like '%"+searchA+"%' ";
-}
-
-else{
-	sql ="select * from attendance";
-}
-resultSet = statement.executeQuery(sql);
-int i=0;
-while(resultSet.next()){
-%>
-
-<tr>
-<td><%=resultSet.getString("sid") %></td>
-<td><%=resultSet.getString("name") %></td>
-<td><%=resultSet.getString("date") %></td>
-<td><%=resultSet.getString("dep") %></td>
-<td><%=resultSet.getString("intime") %></td>
-<td><%=resultSet.getString("outtime") %></td>
-</tr>
-<%
-}
-connection.close();
-} catch (Exception e) {
-e.printStackTrace();
-}
-%>
-</table></center>
-
+<form method="post" action="process.jsp">
+Staff Id:<br>
+<input type="text" name="sid">
+<br>
+First name:<br>
+<input type="text" name="name">
+<br>
+Department:<br>
+<input type="text" name="dep">
+<br>
+Date:<br>
+<input type="text" size="50px"  id="datepick" name="date" hint= "Select Date" required align="middle" hspace="70" >
+<br>
+In Time:<br>
+<input type="text" name="intime">
+<br>
+<br>
+Out time:<br>
+<input type="text" name="outtime">
+<br>
+<br><br>
+<input type="submit" value="submit">
+</form>
 
 </body>
 </html>

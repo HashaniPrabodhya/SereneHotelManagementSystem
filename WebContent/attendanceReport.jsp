@@ -394,8 +394,10 @@ function closeNav() {
 <center>
 
     <form >
-      <input type="text" size="80px"  id="datepick" name="search" value= "Choose Date" required align="middle" hspace="70" style="background-color:#99ff99">
-      <select name="search2" id="dep" align="middle" hspace="70" margin = "10%" style="background-color:#99ff99">
+     <table>
+       <tr>
+      <th><input type="text" size="80px"  id="datepick" name="search" value= "Choose Date" required align="middle" hspace="70" style="background-color:#99ff99"></th>
+      <th><select name="search2" id="dep" align="middle" hspace="70" margin = "10%" style="background-color:#99ff99">
  
     <option value="F">Select Department</option>
  
@@ -418,17 +420,16 @@ function closeNav() {
     <option value="P">Purchase Department</option>
     
     <option value="IT">IT Department</option>
-    </select>
+    </select></th>
       
-      <button type="submit" name="search"><i class="fa fa-search" ></i></button>
+    <th><button class="but" type="submit" name="search" style="background-color:#00ff00;" align="middle" hspace="70" >Get Attendance</button></th>
+    </tr>
+    </table>
     </form>
 
-    
- 
-<button class="but" type="submit"   name="getA" style="background-color:#00ff00;" align="middle" hspace="70" >Get Attendance</button>
 </div></center>
 
-<br/><br/> <br/><br/><br/>
+<br/><br/> <br/>
 
   <center>   
      <table border="1">
@@ -449,7 +450,7 @@ String query2 = request.getParameter("search2");
 String sql;
 
 if(query != null){
-	sql ="select * from attendance where date like '%"+query+"%' OR dep like '%"+query2+"%'";
+	sql ="select * from attendance where date like '%"+query+"%' AND dep like '%"+query2+"%'";
 }
 
 else{

@@ -234,7 +234,7 @@ body, html {
 </div>
 <center><h1 style="color:white;">Add Staff Member form</h1>
 <br/><br/>
-<form method="POST" action="InsertServlet">
+<form method="POST" action="insert-process.jsp">
 	 <div style="border: 3px solid white; background-color:#382E83">
 	 <br/>
 	 
