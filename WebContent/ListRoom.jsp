@@ -186,8 +186,7 @@ table{
 background-color:#EAEDED; 
 text-align:center; 
 width:1000px; 
-height:300px; 
- margin:20px; 
+margin:20px; 
 padding: 20px; 
 color:black;
 }
@@ -263,7 +262,7 @@ background-color:#34495E; /*#5D6D7E*/
 </div>&nbsp;&nbsp;&nbsp;
 <div style="float: right; margin-right:260px;">
 	<form>
-		<input type="text" name="roomNo" placeholder="Enter Room No" style="width:150px; height:35px; font-size: 20px;"/>&nbsp;&nbsp;&nbsp;<input type="submit" value="Search" style="background-color:#85C1E9; width:150px; height:40px; font-size: 20px;"/>
+		<input type="text" name="search" placeholder="Search by Room No" style="width:150px; height:35px; font-size: 18px;"/>
 	</form>
 </div>
 </div>
@@ -280,19 +279,20 @@ background-color:#34495E; /*#5D6D7E*/
 <th><b/>Room<br/><b/>Status</th>
 <th><tab><tab><b/>Actions</th>
 </tr>
-
-
-<!-- Search method -->
-
-
-
-
-
 <%
 try{
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
 statement=connection.createStatement();
-String sql ="select * from rooms";
+String query = request.getParameter("search");
+String sql;
+
+if(query != null){
+	sql ="select * from rooms where roomNo like '%"+query+"%' ";
+}
+
+else{
+	sql ="select * from rooms";
+}
 resultSet = statement.executeQuery(sql);
 int i=0;
 while(resultSet.next()){
