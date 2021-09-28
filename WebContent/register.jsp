@@ -1,5 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+    <%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%
+
+String driver = "com.mysql.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://localhost:3306/staff_managment";
+
+String userid = "root";
+String password = "jami1998";
+try {
+Class.forName(driver);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+Connection connection = null;
+Statement statement = null;
+ResultSet resultSet = null;
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -207,6 +228,17 @@ body, html {
 </style>
 
 <script src="https://kit.fontawesome.com/85c9cbf9ed.js" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
+      <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+ 
+      <!-- Javascript -->  
+      <script>  
+         $(function() {  
+            $( "#dob" ).datepicker();  
+         }); 
+
+      </script>
 </head>
 
 <body style="background-color:#0D1E52;" >
@@ -222,7 +254,7 @@ body, html {
   size:24px;"><b/>Logout</a></text>
   </div>
 </div>
-</header>
+
 
 <div class="topnav">
   <a href="#home"><b/>Home</a>
@@ -232,8 +264,10 @@ body, html {
   
   
 </div>
+
 <center><h1 style="color:white;">Add Staff Member form</h1>
 <br/><br/>
+
 <form method="POST" action="insert-process.jsp">
 	 <div style="border: 3px solid white; background-color:#382E83">
 	 <br/>
@@ -242,48 +276,27 @@ body, html {
 	 <table style="color:white;">
 	 <tr>
 	  <td><label >First Name:</label></td>
-      <td><input type="text" size="75px" name="fname"  required autocomplete="off"></td>
+      <td><input type="text" size="75px" name="fname"  required ></td>
 	  
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr>
 	  <td><label >Last Name:</label></td>
-      <td><input type="text" size="75px" name="lname"  required autocomplete="off"></td>
+      <td><input type="text" size="75px" name="lname"  required autocomplete="on"></td>
 	  
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr>
 	<form action="/action_page.php">
 	  <td><label >Date of Birth:</label></td>
-      <td><input type="date" size="75px" name="dob" id="birthday" required autocomplete="off"></td>
+      <td><input type="text" size="75px"  id="dob" name="dob" hint= "Select Date" required align="middle"  ></td>
 	  <td><span class="text-danger font-weight-bold"></span></td>
 	  </form>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>  
 	<tr> 
 	  <td><label >Gender:</label></td>
-      <td><select name="gen" id="gen">
+      <td><select name="gender" id="gender">
  
     <option value="s">Select Gender     </option>
  
@@ -293,92 +306,43 @@ body, html {
     </select></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr> 
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
     <tr> 
 	  <td><label >Email:</label></td>
       <td><input type="text" size="75px"  name="email" required></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Phone:</label></td>
       <td><input type="text" size="75px"  name="phone" required></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >NIC:</label></td>
       <td><input type="text" size="75px"  name="nic" required></td>
 	  <td><span  class="text-danger font-weight-bold"> </span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Address:</label></td>
       <td><input type="text" size="75px"  name="address" required></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Salary:</label></td>
       <td><input type="text" size="75px" pattern="^[0-9]+\.?[0-9]{0,2}$"  name="salary" autocomplete="off" required></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Job Title:</label></td>
       <td><input type="text" size="75px"  name="job" required></td>
 	  <td><span  class="text-danger font-weight-bold"> </span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Department:</label></td>
       <td><select name="dep" id="dep" >
@@ -394,15 +358,15 @@ body, html {
  
     <option value="A">Accounts and Credits Department</option>
  
-    <option value="E">Engineering and Maintenance Department</option>
+    <option >Engineering and Maintenance Department</option>
  
-    <option value="HR">Human Resource Department</option>
+    <option >Human Resource Department</option>
     
-    <option value="S">Security Department</option>
+    <option >Security Department</option>
     
-    <option value="P">Purchase Department</option>
+    <option >Purchase Department</option>
     
-    <option value="IT">IT Department</option>
+    <option >IT Department</option>
 </select></td>
 	  <td><span  class="text-danger font-weight-bold"> </span></td>
 	</tr>

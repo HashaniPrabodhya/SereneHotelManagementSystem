@@ -384,7 +384,7 @@ th, td{
   size:24px;"><b/>Logout</a></text>
   </div>
 </div>
-</header>
+
 
 <div class="topnav">
   <a href="#home"><b/>Home</a>
@@ -401,7 +401,7 @@ th, td{
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="register.jsp"> +  Add Staff</a>
-  <a href="attendance.jsp">View Attendance</a>
+  <a href="attendance.jsp">Mark Attendance</a>
   <a href="staffReport.jsp">Staff Report</a>
   <a href="attendanceReport.jsp">Attendance Report</a>
 </div>

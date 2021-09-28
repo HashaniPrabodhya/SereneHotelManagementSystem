@@ -28,7 +28,6 @@ ResultSet resultSet = null;
 <title>Insert title here</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
 <style>
 
 /*header*/
@@ -313,11 +312,12 @@ button:hover span:after {
       <!-- Javascript -->  
       <script>  
          $(function() {  
-            $( "#datepick" ).datepicker();  
+            $( "#date" ).datepicker();  
          }); 
 
       </script>
 </head>
+
 <body style="background-color:#0D1E52;">
 
 <div class="header">
@@ -331,7 +331,7 @@ button:hover span:after {
   size:24px;"><b/>Logout</a></text>
   </div>
 </div>
-</header>
+
 
 <div class="topnav">
   <a href="#home"><b/>Home</a>
@@ -348,7 +348,7 @@ button:hover span:after {
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="shome.jsp">Staff Home</a>
     <a href="register.jsp"> +  Add Staff</a>
-  <a href="#">View Attendance</a>
+  <a href="attendance.jsp">Mark Attendance</a>
   <a href="staffReport.jsp">Staff Report</a>
   <a href="attendanceReport.jsp">Attendance Report</a>
 </div>
@@ -368,29 +368,27 @@ function closeNav() {
 <br/>
 <br/>
 
-<br/><br/> <br/><br/><br/>
 <form method="post" action="process.jsp">
 Staff Id:<br>
-<input type="text" name="sid">
-<br>
-First name:<br>
-<input type="text" name="name">
-<br>
-Department:<br>
-<input type="text" name="dep">
-<br>
-Date:<br>
-<input type="text" size="50px"  id="datepick" name="date" hint= "Select Date" required align="middle" hspace="70" >
-<br>
-In Time:<br>
-<input type="text" name="intime">
-<br>
-<br>
-Out time:<br>
-<input type="text" name="outtime">
-<br>
+<input type="text" size="75px" name="sid">
 <br><br>
-<input type="submit" value="submit">
+First name:<br>
+<input type="text" size="75px" name="name">
+<br><br>
+Department:<br>
+<input type="text" size="75px" name="dep">
+<br><br>
+Date:<br>
+<input type="text" size="75px"  id="date" name="date" hint= "Select Date" required align="middle" >
+<br><br>
+In Time:<br>
+<input type="text" size="75px" name="intime">
+<br><br>
+Out time:<br>
+<input type="text" size="75px" name="outtime">
+<br><br>
+<br>
+<button  type="submit" size="145px" name="btnadd" style="background-color:#00ff00;"  >Submit</button>
 </form>
 
 </body>

@@ -372,7 +372,7 @@ body, html {
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="shome.jsp">Staff Home</a>
     <a href="register.jsp"> +  Add Staff</a>
-  <a href="attendance.jsp">View Attendance</a>
+  <a href="attendance.jsp">Mark Attendance</a>
   <a href="staffReport.jsp">Staff Report</a>
   <a href="#">Attendance Report</a>
 </div>
@@ -391,44 +391,39 @@ function closeNav() {
 <Center><h2 style="color:white;"><b>Daily Attendance</b></h2></Center>
 <br/>
 <br/>
-<center>
-
+ <div> 
+  <center>
     <form >
-     <table>
-       <tr>
-      <th><input type="text" size="80px"  id="datepick" name="search" value= "Choose Date" required align="middle" hspace="70" style="background-color:#99ff99"></th>
-      <th><select name="search2" id="dep" align="middle" hspace="70" margin = "10%" style="background-color:#99ff99">
+      <input type="text"   id="datepick" name="search" value= "Choose Date" required  style="background-color:#99ff99">
+      <select name="search2" id="dep" align="middle"  style="background-color:#99ff99">
  
-    <option value="F">Select Department</option>
+        <option >Select Department</option>
  
-    <option value="F">Front Office Department</option>
+        <option >Front Office Department</option>
  
-    <option value="H">Housekeeping Department</option>
+        <option >Housekeeping Department</option>
  
-    <option value="FB">Food and Beverage Service Department</option>
+        <option >Food and Beverage Service Department</option>
  
-    <option value="K">Kitchen or Food Production Department</option>
+        <option >Kitchen or Food Production Department</option>
  
-    <option value="A">Accounts and Credits Department</option>
+        <option >Accounts and Credits Department</option>
  
-    <option value="E">Engineering and Maintenance Department</option>
+        <option >Engineering and Maintenance Department</option>
  
-    <option value="HR">Human Resource Department</option>
+        <option >Human Resource Department</option>
     
-    <option value="S">Security Department</option>
+        <option >Security Department</option>
     
-    <option value="P">Purchase Department</option>
+        <option >Purchase Department</option>
     
-    <option value="IT">IT Department</option>
-    </select></th>
-      
-    <th><button class="but" type="submit" name="search" style="background-color:#00ff00;" align="middle" hspace="70" >Get Attendance</button></th>
-    </tr>
-    </table>
-    </form>
-
-</div></center>
-
+        <option >IT Department</option>
+    </select>
+     <br><br> 
+    <button class="but" type="submit" name="search" style="background-color:#00ff00;"  >Get Attendance</button>
+   </form>
+  </center>
+</div>
 <br/><br/> <br/>
 
   <center>   
@@ -495,5 +490,6 @@ var opt = {
 html2pdf().from(element).set(opt).save();
 }
 </script>
+<br><br><br>
 </body>
 </html>
