@@ -656,7 +656,24 @@ e.printStackTrace();
 <center><button onclick="generatePDF()" class="sub" type="submit"  name="down" style="background-color:#66e0ff;"  ><b>Download</b></button></center>
 <br><br><br>
 
+<script src="/ html2pdf/js/html2pdf.bundle.min.js"></script>
 
+<script>
+function generatePDF(){
+	var element = document.getElementById("list");
+	var opt = {
+	  margin:       1,
+	  filename:     'StaffMemberReport.pdf',
+	  image:        { type: 'jpeg', quality: 0.98 },
+	  html2canvas:  { scale: 2 },
+	  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+	};
+	 
+	// New Promise-based usage:
+	html2pdf().from(element).set(opt).save();
+
+	}
+</script>
 
 </body>
 </html>
