@@ -467,6 +467,21 @@ e.printStackTrace();
 <center><button onclick="print1()" class="sub" type="submit"  name="down" style="background-color:#66e0ff;"  ><b>Download</b></button></center>
 <script>
 
+
+function print1(){
+var element = document.getElementById("list1");
+var opt = {
+  margin:       1,
+  filename:     'Staff.pdf',
+  image:        { type: 'jpeg', quality: 0.98 },
+  html2canvas:  { scale: 2 },
+  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+};
+ 
+// New Promise-based usage:
+html2pdf().from(element).set(opt).save();
+}
+</script>
 <br><br><br>
 </body>
 </html>
