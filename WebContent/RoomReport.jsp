@@ -7,6 +7,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="java.util.Date"%>
 <%
 String driver = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3306/";
@@ -29,10 +30,8 @@ ResultSet resultSet = null;
 <head>
 <meta charset="ISO-8859-1">
 <title>RoomList</title>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <style>
-
-
 
 /*header*/
 .header {
@@ -181,24 +180,17 @@ p{
 	text-align:left;
 }
 
+
 table{
 
 background-color:#EAEDED; 
 text-align:center; 
-width:1000px; 
-margin:20px; 
+width:590px; 
+height:600px; 
+ margin:20px; 
 padding: 20px; 
 color:black;
 }
-
-
-input[type=submit]{
-	width:75%;
-	padding:5px;
-	align: center;
-	font-weight: bold;
-}
-
 
 table, th, td {
   border: 3px solid #AEB6BF;
@@ -210,8 +202,9 @@ th, td {
 }
 
 
+
 body{
-border: 5px sloid darkBlue;
+border: 5px sloid darkblue;
 background-color:#34495E; /*#5D6D7E*/
 }
 
@@ -219,6 +212,7 @@ background-color:#34495E; /*#5D6D7E*/
 	<script src="https://kit.fontawesome.com/85c9cbf9ed.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
 
 <header>
 <div class="header">
@@ -250,49 +244,36 @@ background-color:#34495E; /*#5D6D7E*/
 
 
 
+<div style="float: right; margin-right: 350px;" ><br/><br/>
+	<a href="#"><button type="button" onclick="print()" style="background-color:#85C1E9; width:150px; height:40px; font-size: 20px;"><b/>Download</button></a>
+	
+	</div>
+	
+	<br/><br/><br/>
 
 
+<div id="list">
+<img style="margin-left:50%;"src="images/logo.jpg" class="logo" height="70px" width="70px">
+<h1 style="color:black; margin-left:40%;"><b/>Room Details Report</h1>
+<p style="margin-left:20%;">Date&Time:<%=new Date().toString() %></p>
 <center>
-<div>
-<h1 style="color:#AEB6BF;"><b/>Room Management</h1><br/>
-<div>
-<div style="float: left; margin-left:260px;">
-	<a href="AddRoom.jsp"><button type="button" style="background-color:#85C1E9; width:150px; height:40px; font-size: 20px;"><b/>Add Room</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="RoomReport.jsp"><button type="button" style="background-color:#85C1E9; width:150px; height:40px; font-size: 20px;"><b/>Get Report</button></a>
-</div>&nbsp;&nbsp;&nbsp;
-<div style="float: right; margin-right:260px;">
-	<form>
-		<input type="text" name="search" placeholder="Search by Room No" style="width:175px; height:35px; font-size: 18px;"/>
-	</form>
-</div>
-</div>
-<br/><br/>
 <table>
 <tr>
-<th><b/>Room<br/><b/>No</th>
-<th><b/>Floor<br/>No</th>
-<th>Room<br/>Type<b/></th>
-<th><b/>Beds<br/><b/></th>
-<th><b/>Max<br/><b/>Adults</th>
-<th><b/>Max<br/><b/>Child</th>
-<th><b/>Price<br/><b/></th>
-<th><b/>Room<br/><b/>Status</th>
-<th><tab><tab><b/>Actions</th>
+<th>Room<br/>No</th>
+<th>Floor<br/>No</th>
+<th>Room<br/>Type</th>
+<th>Beds<br/></th>
+<th>Max<br/>Adults</th>
+<th>Max<br/>Child</th>
+<th>Price<br/></th>
+<th>Room<br/>Status</th>
+
 </tr>
 <%
 try{
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
 statement=connection.createStatement();
-String query = request.getParameter("search");
-String sql;
-
-if(query != null){
-	sql ="select * from rooms where roomNo like '%"+query+"%' ";
-}
-
-else{
-	sql ="select * from rooms";
-}
+String sql ="select * from rooms";
 resultSet = statement.executeQuery(sql);
 int i=0;
 while(resultSet.next()){
@@ -306,8 +287,6 @@ while(resultSet.next()){
 <td><%=resultSet.getInt("maxChild") %></td>
 <td><%=resultSet.getDouble("price") %></td>
 <td><%=resultSet.getString("roomStatus") %></td>
-<td><a href="EditRoom.jsp?roomNo=<%=resultSet.getString("roomNo") %>"><button type="button" class="update" style="background-color:#1AAB1A; width:60px;"><b>Edit</b></button></a>&nbsp;&nbsp;
-<a href="DeleteRoom.jsp?roomNo=<%=resultSet.getString("roomNo") %>"><button type="button" class="delete" style="background-color:#ED4C39;  width:60px;"><b>Delete</b></button></a></td>
 </tr>
 <%
 i++;
@@ -320,5 +299,23 @@ e.printStackTrace();
 </table>
 
 </div>
+
+<script>
+function print(){
+	var element = document.getElementById("list");
+	var opt = {
+	  margin:       1,
+	  filename:     'RoomListReport.pdf',
+	  image:        { type: 'jpeg', quality: 0.98 },
+	  html2canvas:  { scale: 2 },
+	  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+	};
+	 
+	// New Promise-based usage:
+	html2pdf().from(element).set(opt).save();
+
+	}
+</script>
+
 </body>
 </html>
