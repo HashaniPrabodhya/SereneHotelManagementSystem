@@ -309,13 +309,6 @@ button:hover span:after {
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
       <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
  
-      <!-- Javascript -->  
-      <script>  
-         $(function() {  
-            $( "#date" ).datepicker();  
-         }); 
-
-      </script>
 </head>
 
 <body style="background-color:#0D1E52;">
@@ -379,7 +372,7 @@ Department:<br>
 <input type="text" size="75px" name="dep">
 <br><br>
 Date:<br>
-<input type="text" size="75px"  id="date" name="date" hint= "Select Date" required align="middle" >
+<input type="date" size="75px"  id="date" name="date"  required align="middle" >
 <br><br>
 In Time:<br>
 <input type="text" size="75px" name="intime">

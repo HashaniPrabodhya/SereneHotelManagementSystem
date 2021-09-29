@@ -160,15 +160,6 @@ th, td{
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
       <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
  
-      <!-- Javascript -->  
-      <script>  
-         $(function() {  
-            $( "#datepick" ).datepicker();  
-         }); 
-
-      </script>
-      
-      
 <style>
 
 /*header*/
@@ -356,7 +347,6 @@ body, html {
   size:24px;"><b/>Logout</a></text>
   </div>
 </div>
-</header>
 
 <div class="topnav">
   <a href="#home"><b/>Home</a>
@@ -425,7 +415,7 @@ function closeNav() {
   </center>
 </div>
 <br/><br/> <br/>
-
+<div id="list1">
   <center>   
      <table border="1">
 <tr>
@@ -471,25 +461,12 @@ e.printStackTrace();
 }
 %>
 </table>
-
+</center>
+</div>
 <br/><br/><br/>
 <center><button onclick="print1()" class="sub" type="submit"  name="down" style="background-color:#66e0ff;"  ><b>Download</b></button></center>
 <script>
 
-function print1(){
-var element = document.getElementById("list1");
-var opt = {
-  margin:       1,
-  filename:     'Staff.pdf',
-  image:        { type: 'jpeg', quality: 0.98 },
-  html2canvas:  { scale: 2 },
-  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-};
- 
-// New Promise-based usage:
-html2pdf().from(element).set(opt).save();
-}
-</script>
 <br><br><br>
 </body>
 </html>

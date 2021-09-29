@@ -27,9 +27,10 @@ ResultSet resultSet = null;
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <style>
 
 /*header*/
@@ -370,6 +371,28 @@ th, td{
   opacity: 1;
   transition: 0s
 }
+.sub {
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 7px #999;
+}
+
+.sub:hover {background-color: #3e8e41}
+
+.sub:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 </style>
 <style>
 
@@ -544,6 +567,7 @@ body, html {
 </style>
 </head>
 <body style="background-color:#0D1E52;">
+
 <div class="header">
 <a href="#home">
   <img src="images/logo.jpg" class="logo" height="100px" width="100px">
@@ -555,15 +579,12 @@ body, html {
   size:24px;"><b/>Logout</a></text>
   </div>
 </div>
-</header>
 
 <div class="topnav">
   <a href="#home"><b/>Home</a>
   <a href="#"><b/>Rooms</a>
   <a href="#hall"><b/>Banquet Hall</a>
   <a href="shome.jsp"><b/>Staff</a>
-  
-  
 </div>
 
 <center><h1 style="color:white;"><b>Staff Managment</b></h1></center>
@@ -577,7 +598,7 @@ body, html {
   <a href="attendanceReport.jsp">Attendance Report</a>
 </div>
 
-<span style="font-size:30px;cursor:pointer;color:white;" onclick="openNav()">&#9776;  Staff Managment</span>
+<span style="font-size:30px;cursor:pointer;color:white;" onclick="openNav()">&#9776; Staff Managment</span>
 
 <script>
 function openNav() {
@@ -589,17 +610,21 @@ function closeNav() {
 }
 </script>
 
-<div id="printme">
+<div id="list" >
   
 <center><h1 style="color:white;"><b>Staff Managment</b></h1></center>
-
+<br>
 <p style="width:50%;margin:0% 25%;">Date & Time : <%=new Date().toString()%> </p>
+<br>
 <center>
 
 <table border="1"  style="background-color:#8C98C1; color:white;" >
 <tr>
 <td>Staff ID</td>
 <td>First name</td>
+<td>Job Title</td>
+<td>Department</td>
+<td>Salary</td>
 </tr>
 <%
 try{
@@ -613,7 +638,9 @@ while(resultSet.next()){
 <tr>
 <td><%=resultSet.getString("sid") %></td>
 <td><%=resultSet.getString("fname") %></td>
-
+<td><%=resultSet.getString("job") %></td>
+<td><%=resultSet.getString("dep") %></td>
+<td><%=resultSet.getString("salary") %></td>
 </tr>
 <%
 i++;
@@ -625,23 +652,10 @@ e.printStackTrace();
 %>
 </table>
 </div>
-<button onclick="generatePDf()">Download</button>
+<br>
+<center><button onclick="generatePDF()" class="sub" type="submit"  name="down" style="background-color:#66e0ff;"  ><b>Download</b></button></center>
+<br><br><br>
 
-<script src="/ html2pdf/js/html2pdf.bundle.min.js"></script>
-<script type="text/javascript">
-  function generatePDF() {
-    const element = document.getElementById("printme");
-  //const sideicon= document.getElementByClassName("sideicon");
 
-    setTimeout(() => {
-        html2pdf(element, {
-      margin:      [10,2,10,2],
-      filename:    'staff.pdf',
-      html2canvas: {scale:2 , ignoreElements: sideicon, logging:true, dpi:1200, letterRendering: true }'
-      jsPDF:       {unit:'mm', format:'letter', orientation:'landscape'}
-   });
-         }, 100);
-     }
-</script>
 </body>
 </html>

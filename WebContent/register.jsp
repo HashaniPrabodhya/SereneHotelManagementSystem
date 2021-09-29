@@ -26,6 +26,7 @@ ResultSet resultSet = null;
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Staff Member details</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style >
  table{
   border-width : "15px";
@@ -232,13 +233,6 @@ body, html {
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
       <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
  
-      <!-- Javascript -->  
-      <script>  
-         $(function() {  
-            $( "#dob" ).datepicker();  
-         }); 
-
-      </script>
 </head>
 
 <body style="background-color:#0D1E52;" >
@@ -271,7 +265,6 @@ body, html {
 <form method="POST" action="insert-process.jsp">
 	 <div style="border: 3px solid white; background-color:#382E83">
 	 <br/>
-	 
 	 <br/>
 	 <table style="color:white;">
 	 <tr>
@@ -287,11 +280,8 @@ body, html {
 	</tr>
 	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr>
-	<form action="/action_page.php">
 	  <td><label >Date of Birth:</label></td>
-      <td><input type="text" size="75px"  id="dob" name="dob" hint= "Select Date" required align="middle"  ></td>
-	  <td><span class="text-danger font-weight-bold"></span></td>
-	  </form>
+      <td><input type="date" size="75px"  id="dob" name="dob" max="2021-01-01" autocomplete="off"></td>
 	</tr>
 	<tr>  </tr><tr>  </tr><tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>  
 	<tr> 
@@ -309,7 +299,7 @@ body, html {
 	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
     <tr> 
 	  <td><label >Email:</label></td>
-      <td><input type="text" size="75px"  name="email" required></td>
+      <td><input type="email" size="75px"  name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr>
 	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
