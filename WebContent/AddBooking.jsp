@@ -8,6 +8,7 @@
 <%@page import="java.sql.Connection"%>
 
 <%
+//initializing variables
 String driver = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3306/hotel?autoReconnect=true&useSSL=false";
 
