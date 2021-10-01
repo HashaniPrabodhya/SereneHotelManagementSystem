@@ -23,7 +23,8 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/staff
 Statement st=conn.createStatement();
 
 int i=st.executeUpdate("insert into staff_details(fname,lname,dob,gender,email,phone,nic,address,salary,job,dep) values('"+fname+"','"+lname+"','"+dob+"','"+gender+"','"+email+"',"+phone+",'"+nic+"','"+address+"',"+salary+",'"+job+"','"+dep+"')");
-out.println("Data is successfully inserted!");
+RequestDispatcher dis3 = request.getRequestDispatcher("shome.jsp");
+dis3.forward(request, response);
 }
 catch(Exception e)
 {

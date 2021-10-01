@@ -251,11 +251,10 @@ body, html {
 
 
 <div class="topnav">
-  <a href="#home"><b/>Home</a>
-  <a href="#"><b/>Rooms</a>
-  <a href="#hall"><b/>Banquet Hall</a>
+  <a href="AdminHome.jsp"><b/>Home</a>
+  <a href="ListRoom.jsp"><b/>Rooms</a>
+  <a href="NewBanq.jsp"><b/>Banquet Hall</a>
   <a href="shome.jsp"><b/>Staff</a>
-  
   
 </div>
 
@@ -288,11 +287,11 @@ body, html {
 	  <td><label >Gender:</label></td>
       <td><select name="gender" id="gender">
  
-    <option value="s">Select Gender     </option>
+    <option >Select Gender     </option>
  
-    <option value="m">Male</option>
+    <option >Male</option>
  
-    <option value="f">Female</option>
+    <option >Female</option>
     </select></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr> 
@@ -336,17 +335,17 @@ body, html {
 	<tr> 
 	  <td><label >Department:</label></td>
       <td><select name="dep" id="dep" >
- <option value="F">Select Department</option>
+ <option >Select Department</option>
  
-    <option value="F">Front Office Department</option>
+    <option >Front Office Department</option>
  
-    <option value="H">Housekeeping Department</option>
+    <option >Housekeeping Department</option>
  
-    <option value="FB">Food and Beverage Service Department</option>
+    <option >Food and Beverage Service Department</option>
  
-    <option value="K">Kitchen or Food Production Department</option>
+    <option >Kitchen or Food Production Department</option>
  
-    <option value="A">Accounts and Credits Department</option>
+    <option >Accounts and Credits Department</option>
  
     <option >Engineering and Maintenance Department</option>
  

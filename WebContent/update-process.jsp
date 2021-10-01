@@ -44,9 +44,7 @@ ps.setString(12, dep);
 int i = ps.executeUpdate();
 if(i > 0)
 {
-	
-	
-	RequestDispatcher dis3 = request.getRequestDispatcher("shome.jsp");
+	  RequestDispatcher dis3 = request.getRequestDispatcher("shome.jsp");
 	  dis3.forward(request, response);
 }
 else

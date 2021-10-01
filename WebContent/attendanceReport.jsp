@@ -9,7 +9,6 @@
 String sid = request.getParameter("sid");
 String driver = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3306/staff_attendance";
-
 String userid = "root";
 String password = "jami1998";
 try {
@@ -30,11 +29,9 @@ ResultSet resultSet = null;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
 body {
   font-family: "Lato", sans-serif;
 }
-
 .sidenav {
   height: 100%;
   width: 0;
@@ -47,7 +44,6 @@ body {
   transition: 0.5s;
   padding-top: 60px;
 }
-
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -56,11 +52,9 @@ body {
   display: block;
   transition: 0.3s;
 }
-
 .sidenav a:hover {
   color: #f1f1f1;
 }
-
 .sidenav .closebtn {
   position: absolute;
   top: 0;
@@ -68,31 +62,26 @@ body {
   font-size: 36px;
   margin-left: 50px;
 }
-
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-
 table, th, td{
   border:1px solid white;
   background-color : #8C98C1;
 }
-
 table{
   width:70%;
-  margin:0% 25%;
+  margin:0% %px;
 }
  form{
   
   margin:0% 35%;
 }
-
 th, td{
   padding:5px;
   text-align:center;
 }
-
  .sub {
   display: inline-block;
   padding: 10px 25px;
@@ -107,16 +96,12 @@ th, td{
   border-radius: 15px;
   box-shadow: 0 7px #999;
 }
-
 .sub:hover {background-color: #3e8e41}
-
 .sub:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-
-
 .but {
   display: inline-block;
   border-radius: 4px;
@@ -131,14 +116,12 @@ th, td{
   cursor: pointer;
   margin: 5px;
 }
-
 .but span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
-
 .but span:after {
   content: '\00bb';
   position: absolute;
@@ -147,11 +130,9 @@ th, td{
   right: -20px;
   transition: 0.5s;
 }
-
 .but span {
   padding-right: 25px;
 }
-
 .but span:after {
   opacity: 1;
   right: 0;
@@ -161,7 +142,6 @@ th, td{
       <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
  
 <style>
-
 /*header*/
 .header {
   overflow: hidden;
@@ -225,7 +205,6 @@ th, td{
   background-color: black;
   color: white;
 }
-
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
@@ -252,24 +231,20 @@ th, td{
   animation-name: fade;
   animation-duration: 1.5s;
 }
-
 @-webkit-keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
 }
-
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
 }
-
 .container {
 	position: relative;
 	text-align: center;
 	color: white;
 	
 }
-
 .centered{
 		position:absolute;
 		top:50%;
@@ -308,28 +283,21 @@ p{
 	font-style:italic;
 	text-align:left;
 }
-
-
 /*background image*/
 body, html {
   height: 100%;
   margin: 0;
 }
-
 .bg {
   /* The image used */
   background-image: url("images/admin_home_image.jpg");
-
   /* Full height */
   height: 100%; 
-
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-
 </style>
 
 <script src="https://kit.fontawesome.com/85c9cbf9ed.js" crossorigin="anonymous"></script>
@@ -349,9 +317,9 @@ body, html {
 </div>
 
 <div class="topnav">
-  <a href="#home"><b/>Home</a>
-  <a href="#"><b/>Rooms</a>
-  <a href="#hall"><b/>Banquet Hall</a>
+  <a href="AdminHome.jsp"><b/>Home</a>
+  <a href="ListRoom.jsp"><b/>Rooms</a>
+  <a href="NewBanq.jsp"><b/>Banquet Hall</a>
   <a href="shome.jsp"><b/>Staff</a>
   
   
@@ -368,17 +336,22 @@ body, html {
 </div>
 
 <span style="font-size:30px;cursor:pointer; color:white;" onclick="openNav()">&#9776; Staff Managment</span>
+    <!-- Javascript -->  
+      <script>  
+         $(function() {  
+            $( "#datepick" ).datepicker();  
+         }); 
 
+      </script>
 <script>
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
 }
-
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 </script>
-<Center><h2 style="color:white;"><b>Daily Attendance</b></h2></Center>
+
 <br/>
 <br/>
  <div> 
@@ -416,6 +389,8 @@ function closeNav() {
 </div>
 <br/><br/> <br/>
 <div id="list1">
+<center><img src="images/logo.jpg" class="logo" height="100px" width="100px"> </center>
+<Center><h2 style="color:blue;"><b>Daily Attendance</b></h2></Center>
   <center>   
      <table border="1">
 <tr>
@@ -433,11 +408,9 @@ statement=connection.createStatement();
 String query = request.getParameter("search");
 String query2 = request.getParameter("search2");
 String sql;
-
 if(query != null){
 	sql ="select * from attendance where date like '%"+query+"%' AND dep like '%"+query2+"%'";
 }
-
 else{
 	sql ="select * from attendance";
 }
@@ -466,8 +439,6 @@ e.printStackTrace();
 <br/><br/><br/>
 <center><button onclick="print1()" class="sub" type="submit"  name="down" style="background-color:#66e0ff;"  ><b>Download</b></button></center>
 <script>
-
-
 function print1(){
 var element = document.getElementById("list1");
 var opt = {

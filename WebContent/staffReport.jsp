@@ -32,7 +32,6 @@ ResultSet resultSet = null;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
-
 /*header*/
 .header {
   overflow: hidden;
@@ -205,7 +204,6 @@ body, html {
 
 <script src="https://kit.fontawesome.com/85c9cbf9ed.js" crossorigin="anonymous"></script>
 <style>
-
 .topnav {
   overflow: hidden;
   background-color: #e9e9e9;
@@ -279,7 +277,7 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-.sidenav {
+ .sidenav {
   height: 100%;
   width: 0;
   position: fixed;
@@ -321,20 +319,14 @@ body {
 table, th, td{
   border:1px solid white;
   background-color : #8C98C1;
+  text-align:center;
 }
 
 table{
-  width:50%;
-  margin:0% 25%;
-}
- form{
-  
-  margin:0% 35%;
-}
+  width:520px;
+  height:500px;
+   margin:20px; 
 
-th, td{
-  padding:5px;
-  text-align:center;
 }
 
 .but {
@@ -395,7 +387,6 @@ th, td{
 }
 </style>
 <style>
-
 /*header*/
 .header {
   overflow: hidden;
@@ -544,24 +535,6 @@ p{
 }
 
 
-/*background image*/
-body, html {
-  height: 100%;
-  margin: 0;
-}
-
-.bg {
-  /* The image used */
-  background-image: url("images/admin_home_image.jpg");
-
-  /* Full height */
-  height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 
 </style>
@@ -581,9 +554,9 @@ body, html {
 </div>
 
 <div class="topnav">
-  <a href="#home"><b/>Home</a>
-  <a href="#"><b/>Rooms</a>
-  <a href="#hall"><b/>Banquet Hall</a>
+  <a href="AdminHome.jsp"><b/>Home</a>
+  <a href="ListRoom.jsp"><b/>Rooms</a>
+  <a href="NewBanq.jsp"><b/>Banquet Hall</a>
   <a href="shome.jsp"><b/>Staff</a>
 </div>
 
@@ -611,8 +584,8 @@ function closeNav() {
 </script>
 
 <div id="list" >
-  
-<center><h1 style="color:white;"><b>Staff Managment</b></h1></center>
+ <center><img src="images/logo.jpg" class="logo" height="100px" width="100px"> </center>
+<center><h1 style="color:blue;"><b>Staff Member Report</b></h1></center>
 <br>
 <p style="width:50%;margin:0% 25%;">Date & Time : <%=new Date().toString()%> </p>
 <br>
@@ -668,10 +641,8 @@ function generatePDF(){
 	  html2canvas:  { scale: 2 },
 	  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
 	};
-	 
 	// New Promise-based usage:
 	html2pdf().from(element).set(opt).save();
-
 	}
 </script>
 

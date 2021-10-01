@@ -6,7 +6,6 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
-
 <style>
 
 /*header*/
@@ -196,11 +195,10 @@ body, html {
 </header>
 
 <div class="topnav">
-  <a href="#home"><b/>Home</a>
-  <a href="#"><b/>Rooms</a>
-  <a href="#hall"><b/>Banquet Hall</a>
+    <a href="AdminHome.jsp"><b/>Home</a>
+  <a href="ListRoom.jsp"><b/>Rooms</a>
+  <a href="NewBanq.jsp"><b/>Banquet Hall</a>
   <a href="shome.jsp"><b/>Staff</a>
-  
   
 </div>
 

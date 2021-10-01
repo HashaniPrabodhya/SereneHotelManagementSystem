@@ -217,15 +217,13 @@ body, html {
   size:24px;"><b/>Logout</a></text>
   </div>
 </div>
-</header>
 
 <div class="topnav">
-  <a href="#home"><b/>Home</a>
-  <a href="#"><b/>Rooms</a>
-  <a href="#hall"><b/>Banquet Hall</a>
+ <a href="AdminHome.jsp"><b/>Home</a>
+  <a href="ListRoom.jsp"><b/>Rooms</a>
+  <a href="NewBanq.jsp"><b/>Banquet Hall</a>
   <a href="shome.jsp"><b/>Staff</a>
-  
-  
+    
 </div>
 <center> 
 <h1 style="color:white;"><b>View Staff Member Details</b></h1>
@@ -244,147 +242,72 @@ body, html {
       <td><lable style="color:white;"><%=resultSet.getString("fname") %></lable></td>
 	  
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr>
 	  <td><label >Last Name:</label></td>
       <td><lable style="color:white;"><%=resultSet.getString("lname") %></lable></td>
 	  
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr>
 	  <td><label >Date of Birth:</label></td>
       <td><lable style="color:white;"><%=resultSet.getString("dob") %></lable></td>
 	  <td><span class="text-danger font-weight-bold"></span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Gender:</label></td>
       <td><lable style="color:white;"><%=resultSet.getString("gender") %></lable></td>	  
       <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr> 
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
     <tr> 
 	  <td><label >Email:</label></td>
       <td><lable style="color:white;"><%=resultSet.getString("email") %></lable></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Phone:</label></td>
       <td><lable style="color:white;"><%=resultSet.getString("phone") %></lable></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >NIC:</label></td>
       <td><lable style="color:white;"><%=resultSet.getString("nic") %></lable></td>
 	  <td><span  class="text-danger font-weight-bold"> </span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Address:</label></td>
       <td><lable style="color:white;"><%=resultSet.getString("address") %></lable></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Salary:</label></td>
       <td><lable style="color:white;"><%=resultSet.getString("salary") %></lable></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Job Title:</label></td>
       <td><lable style="color:white;"><%=resultSet.getString("job") %></lable></td>
 	  <td><span  class="text-danger font-weight-bold"> </span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Department:</label></td>
       <td><lable style="color:white;"><%=resultSet.getString("dep") %></lable></td>
 	  <td><span  class="text-danger font-weight-bold"> </span></td>
 	</tr>
-	
-   </table>
-	 <br/>
-
-<br/>
-<br/><br/>
+  </table>
+<br/><br/><br/><br/>
 </form>
 </div>
 -->
 <br><br>
-
 </center>
 <%
 }

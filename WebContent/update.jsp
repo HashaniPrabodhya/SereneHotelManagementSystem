@@ -257,7 +257,6 @@ body, html {
   <a href="#hall"><b/>Banquet Hall</a>
   <a href="shome.jsp"><b/>Staff</a>
   
-  
 </div>
 
 <center> 
@@ -272,141 +271,71 @@ body, html {
 <input type="hidden" name="sid" value="<%=resultSet.getString("sid") %>">
 <input type="text" name="sid" value="<%=resultSet.getString("sid") %>" readonly>
 <br/><br/><br/>
+ 
 <table style="color:white;">
+
 	 <tr>
 	  <td><label >First Name:</label></td>
       <td><input type="text" size="75px" name="fname"  value="<%=resultSet.getString("fname") %>" readonly></td>
-	  
-	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	 </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr>
 	  <td><label >Last Name:</label></td>
       <td><input type="text" size="75px" name="lname"  value="<%=resultSet.getString("lname") %>" readonly></td>
-	  
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr>
 	  <td><label >Date of Birth:</label></td>
       <td><input type="text" size="75px" name="dob"  value="<%=resultSet.getString("dob") %>" readonly></td>
 	  <td><span class="text-danger font-weight-bold"></span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Gender:</label></td>
       <td><input type="text" size="75px" name="gender" value="<%=resultSet.getString("gender") %>" readonly></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr> 
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
     <tr> 
 	  <td><label >Email:</label></td>
       <td><input type="text" size="75px"  name="email" value="<%=resultSet.getString("email") %>"></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Phone:</label></td>
       <td><input type="text" size="75px"  name="phone" value="<%=resultSet.getString("phone") %>"></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >NIC:</label></td>
       <td><input type="text" size="75px"  name="nic" value="<%=resultSet.getString("nic") %>"></td>
 	  <td><span  class="text-danger font-weight-bold"> </span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Address:</label></td>
       <td><input type="text" size="75px"  name="address" value="<%=resultSet.getString("address") %>"></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Salary:</label></td>
       <td><input type="text" size="75px"  name="salary" value="<%=resultSet.getString("salary") %>"></td>
 	  <td><span  class="text-danger font-weight-bold"></span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Job Title:</label></td>
       <td><input type="text" size="75px"  name="job" value="<%=resultSet.getString("job") %>"></td>
 	  <td><span  class="text-danger font-weight-bold"> </span></td>
 	</tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
-	<tr>  </tr>
+	<tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr><tr>  </tr>
 	<tr> 
 	  <td><label >Department:</label></td>
       <td><select name="dep" id="dep" >
- <option ><%=resultSet.getString("dep") %></option>
+    <option ><%=resultSet.getString("dep") %></option>
  
     <option >Front Office Department</option>
  
@@ -430,24 +359,19 @@ body, html {
 </select></td>
 	  <td><span  class="text-danger font-weight-bold"> </span></td>
 	</tr>
-	
-   </table>
-	 <br/>
-
-<br/>
-<br/><br/>
-<br>
+ </table>
+	 <br/><br/><br/><br/><br><br/><br/>
 </div>
-<br/><br/>
+
 <button  onclick="myFunction()" type="submit" name="submit"><b>Update</b></button>
+
 <script>
-
 function myFunction() {
-
-alert("I am an alert box!");
-
+alert("Update Success!");
 }
-</center></form>
+</script>
+</center>
+</form>
 <%
 }
 connection.close();
