@@ -273,7 +273,7 @@ input[type=submit]:hover {
 												<option value="Luxury Room">Luxury Room</option>
 												<option value="Single Room">Single Room</option>
 												<option value="Family Room">Family Room</option>
-												<option value="Duluxe Room">Duluxe Room</option>
+												<option value="Duluxe Room">Deluxe Room</option>
 												</select>
 												   </div>
   </div>

@@ -26,11 +26,11 @@ public class AddInquiryServlet extends HttpServlet {
 		String message=request.getParameter("message");
 		
 		boolean isTrue;
-		
+		//feedback insertion
 		isTrue=BookingDBUtil.insertInquiry(fName, lName, email, mobile, nationality, message);
 		
 		if(isTrue == true) {
-			
+			//display success message if the feedback recorded
 			RequestDispatcher dis=request.getRequestDispatcher("InquirySuccess.jsp");
 			dis.forward(request, response);
 		}else {

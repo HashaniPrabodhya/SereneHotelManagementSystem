@@ -268,8 +268,8 @@ td{
   <div class="header__right">
     
     <a href="#signin">Sign in</a>
-    <a href="#login">Login</a>
-    <a href="#login">Admin Login</a>
+    <a href="Customer login.jsp">Login</a>
+    <a href="login.jsp">Admin Login</a>
     <div>
  
      </div>
@@ -283,7 +283,7 @@ td{
 <div class="topnav">
   <a href="home.jsp">Home</a>
   <a href="AddBooking.jsp">Rooms</a>
-  <a href="#hall">Banquet Hall</a>
+  <a href="UserAddBanquet.jsp">Banquet Hall</a>
   <a href="contactUs.jsp">Contact Us</a>
   
   
