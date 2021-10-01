@@ -236,7 +236,7 @@ section{
 
 </style>
 	<script src="https://kit.fontawesome.com/85c9cbf9ed.js" crossorigin="anonymous"></script>
-</style>
+
 </head>
 <body>
 	<header>
@@ -260,12 +260,7 @@ section{
 
 
 
-<!-- 
 
-     <form name="report" action="generatePDF" method="post">
-	<input type="submit" value="generatePDF" name="pdf">
-	 </form>   
- -->
 
 
 
