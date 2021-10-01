@@ -389,7 +389,7 @@ td{
 <div class="topnav">
   <a href="home.jsp">Home</a>
   <a href="AddBooking.jsp">Rooms</a>
-  <a href="#hall">Banquet Hall</a>
+  <a href="UserAddBanquet.jsp">Banquet Hall</a>
   <a href="contactUs.jsp">Contact Us</a>
 
 </div>
