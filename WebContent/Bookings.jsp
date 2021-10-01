@@ -293,22 +293,7 @@ section{
       </thead>
     </table>
   </div>
-<!-- 
-<table border="1"  style="background-color:#8C98C1; color:white;" >
-<tr>
-<td>Booking<br/>Number</td>
-<td>Customer<br/>Name</td>
-<td>Accommodation<br/>Type</td>
-<td>From</td>
-<td>To</td>
-<td>Number Of<br/>Nights</td>
-<td>Number Of<br/>Adults</td>
-<td>Number Of<br/>Children</td>
-<td>phone</td>
-<td>User Name</td>
-<td><tab><tab>Actions</td>
-</tr>
- -->
+
  <div class="tbl-content">
 <table cellpadding="0" cellspacing="0" border="0">
   <tbody>
