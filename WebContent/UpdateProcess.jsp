@@ -6,6 +6,7 @@
      <%!   String userN="root";%>
      <%!   String passw="root123";%>
      <%
+     //get parameters
      String bookingId=request.getParameter("bookingId");
      String customerName=request.getParameter("customerName");
      String accomodationType=request.getParameter("accomodationType");
@@ -17,7 +18,9 @@
      String phone=request.getParameter("phone");
      String username=request.getParameter("userName");
      
+     //check whther the booking id is not null
      if(bookingId != null){
+    	 
     	 Connection con=null;
     	 PreparedStatement ps=null;
     	int bookingiD=Integer.parseInt(bookingId);
@@ -39,9 +42,11 @@
     			
     			int i=ps.executeUpdate();
     			if(i > 0){
+    				//if success user redirected to updateSuccess.jsp page
     				RequestDispatcher dis3 = request.getRequestDispatcher("updateSuccess.jsp");
     				  dis3.forward(request, response);
     			}else{
+    				//print an error message if its unsuccess
     				out.print("update failed");
     			}
     	 }catch(SQLException sql){
