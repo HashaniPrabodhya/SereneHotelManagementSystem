@@ -17,7 +17,7 @@ import hotel.dao.UserDao;
 import hotel.model.User;
 
 
-@WebServlet("/insertuser")
+@WebServlet("/UserAddServlet")
 public class UserAddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserDao UserDao;

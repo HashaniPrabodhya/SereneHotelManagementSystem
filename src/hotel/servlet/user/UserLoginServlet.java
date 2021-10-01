@@ -43,7 +43,7 @@ public class UserLoginServlet extends HttpServlet {
             if (UserDao.validate(user)) {
                 //HttpSession session = request.getSession();
                 // session.setAttribute("username",username);
-                response.sendRedirect("MemberView.jsp");
+                response.sendRedirect("Userhome.jsp");
             } else {
                 HttpSession session = request.getSession();
                 //session.setAttribute("user", username);
