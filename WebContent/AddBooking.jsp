@@ -555,47 +555,7 @@ connection.close();
   </form>
 </div>
 				
-<!--  
-		
-					<table width="500" height="300">
-				<form  action="insert" method="post" >
-					<tr>
-						<td>Customer Name:<br/><input type="text" name="customerName" required></td>
-						<tr>
-						<td>Accommodation Type:<br/><select name="accomodationType" required>
-												<option value="">Select  Type</option>
-												<option value="Luxury Room">Luxury Room</option>
-												<option value="Single Room">Single Room</option>
-												<option value="Family Room">Family Room</option>
-												<option value="Duluxe Room">Deluxe Room</option>
-												</select></td>
-												<tr>
-						<td>From:<br/><input type="text" name="from" required></td>
-						<td>To:<br/><input type="text" name="to"></td>
-					</tr>
-						<tr>
-						<td>Number of Nights:<br/><input type="text" name="noNights" required></td>
-						<td>Number of Adults :<br/><input type="text" name="noAdults" required></td>
-					</tr>
-						<td>Number of Children:<br/><input type="text" name="noChildren" required></td>
-					</tr>
-					
-						<td>Phone :<br/><input type="text" name="phone" required></td>
-					
-					
-					
-						<td>User Name:<br/><input type="text" name="userName"></td>
-					</tr>
-					
-				
-					
-					<tr>
-						<td><input type="reset" value="Reset"></a></td>
-						<td><input type="submit" name="submit" value="Create Booking"></td>
-					</tr>
-				</form>
-			</table>
-			-->	
+
 	
 </body>
 </html>
