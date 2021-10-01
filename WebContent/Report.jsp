@@ -46,7 +46,6 @@
 					</c:forEach>
 					<!-- } -->
 				</tbody>
-
 			</table>
 			</div>
 <button onclick="print()">Download Report</button>
