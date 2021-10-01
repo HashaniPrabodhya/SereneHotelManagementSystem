@@ -200,7 +200,7 @@ body, html {
 <div class="topnav">
   <a href="#home"><b/>Home</a>
   <a href="ListRoom.jsp"><b/>Rooms</a>
-  <a href="NewBanq.jsp"><b/>Banquet Hall</a>
+  <a href=" "><b/>Banquet Hall</a>
   <a href="shome.jsp"><b/>Staff</a>
   
   
