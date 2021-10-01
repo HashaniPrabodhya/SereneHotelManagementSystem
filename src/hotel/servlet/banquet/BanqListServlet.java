@@ -15,9 +15,6 @@ import hotel.dao.BanquetDao;
 
 import hotel.model.Banq;
 
-
-
-
 @WebServlet("/listbanq")
 public class BanqListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
