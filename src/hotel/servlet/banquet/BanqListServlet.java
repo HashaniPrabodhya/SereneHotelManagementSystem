@@ -39,7 +39,5 @@ public class BanqListServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 	
 	}
-
 	
-
 }
