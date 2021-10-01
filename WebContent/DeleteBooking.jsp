@@ -26,8 +26,7 @@ e.printStackTrace();
 <meta charset="ISO-8859-1">
 <title>Delete Booking</title>
 </head>
-<!-- int bookingId,String customerName, String accomodationType, String from, String to, String noNights, String noAdults,
-			String noChildren, String phone, String userName -->
+
 <body>
 	<h2>Deleted Successfully </h2>
 	
