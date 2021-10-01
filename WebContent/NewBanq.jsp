@@ -32,7 +32,6 @@
 					</h2>
 				</caption>
 				
-
 				<c:if test="${user != null}">
 					<input type="hidden" name="id" value="<c:out value='${user.id}' />" />
 				</c:if>
