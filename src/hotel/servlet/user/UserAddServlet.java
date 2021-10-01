@@ -1,29 +1,30 @@
-package hotel.servlet.banquet;
+package hotel.servlet.user;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import hotel.dao.BanquetDao;
 
-import hotel.model.Banq;
 
-@WebServlet("/deletebanq")
-public class BanqDeleteServlet extends HttpServlet {
+
+
+import hotel.dao.UserDao;
+import hotel.model.User;
+
+
+@WebServlet("/insertuser")
+public class UserAddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private BanquetDao BanquetDao;
+	private UserDao UserDao;
 	
 	public void init() {
-		BanquetDao = new BanquetDao();
+		UserDao = new UserDao();
 	}
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -33,17 +34,24 @@ public class BanqDeleteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getServletPath();
-
-		int id = Integer.parseInt(request.getParameter("id"));
+		
+		String fullname = request.getParameter("fullname");
+		String username = request.getParameter("username");
+		int mobile = Integer.parseInt( request.getParameter("mobile"));
+		String address = request.getParameter("address");
+		String mail = request.getParameter("mail");
+		String password = request.getParameter("password");
+		
+	User usr = new User( fullname,username,mobile,address,mail,password);
 		try {
-			BanquetDao.deleteBanq(id);
+			UserDao.insertUser(usr);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		response.sendRedirect("listbanq");
+		response.sendRedirect("userlist");
+	
 	}
 
 	
-
 }

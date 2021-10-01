@@ -1,8 +1,8 @@
-package hotel.servlet.banquet;
+package hotel.servlet.user;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.List;
+import hotel.dao.UserDao;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,19 +11,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import hotel.dao.BanquetDao;
-
-import hotel.model.Banq;
-
-@WebServlet("/deletebanq")
-public class BanqDeleteServlet extends HttpServlet {
+@WebServlet("/newuser")
+public class NewUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private BanquetDao BanquetDao;
-	
-	public void init() {
-		BanquetDao = new BanquetDao();
-	}
+	private UserDao UserDao;
 
+	public void init() {
+		UserDao = new UserDao();
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -32,18 +27,9 @@ public class BanqDeleteServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String action = request.getServletPath();
+		RequestDispatcher dispatcher = request.getRequestDispatcher("NewUser.jsp");
+		dispatcher.forward(request, response);
 
-		int id = Integer.parseInt(request.getParameter("id"));
-		try {
-			BanquetDao.deleteBanq(id);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		response.sendRedirect("listbanq");
 	}
-
-	
 
 }

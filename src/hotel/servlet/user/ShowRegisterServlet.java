@@ -1,4 +1,4 @@
-package hotel.servlet.banquet;
+package hotel.servlet.user;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -11,19 +11,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import hotel.dao.BanquetDao;
-
-import hotel.model.Banq;
-
-@WebServlet("/deletebanq")
-public class BanqDeleteServlet extends HttpServlet {
+@WebServlet("/newuserregister")
+public class ShowRegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private BanquetDao BanquetDao;
-	
-	public void init() {
-		BanquetDao = new BanquetDao();
-	}
 
+
+	public void init() {
+		
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -34,16 +29,9 @@ public class BanqDeleteServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String action = request.getServletPath();
 
-		int id = Integer.parseInt(request.getParameter("id"));
-		try {
-			BanquetDao.deleteBanq(id);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		response.sendRedirect("listbanq");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Register.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	
-
 }

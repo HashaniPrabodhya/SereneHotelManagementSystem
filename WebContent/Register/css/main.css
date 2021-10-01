@@ -129,7 +129,7 @@ textarea:-ms-input-placeholder {color: #cccccc;}
 button {
 	outline: none !important;
 	border: none;
-	background: transparent;
+	background: #004085;
 }
 
 button:hover {
@@ -218,11 +218,11 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
-  background: #e8519e;
-  background: -webkit-linear-gradient(bottom, #e8519e, #c77ff2);
-  background: -o-linear-gradient(bottom, #e8519e, #c77ff2);
-  background: -moz-linear-gradient(bottom, #e8519e, #c77ff2);
-  background: linear-gradient(bottom, #e8519e, #c77ff2);
+  /*background: #004085;*/
+  background: -webkit-linear-gradient(bottom, #004085, #007bff);
+  background: -o-linear-gradient(bottom, #004085, #007bff);
+  background: -moz-linear-gradient(bottom, #004085, #007bff);
+  background: linear-gradient(bottom, #004085, #007bff);
   opacity: 0.8;
 }
 

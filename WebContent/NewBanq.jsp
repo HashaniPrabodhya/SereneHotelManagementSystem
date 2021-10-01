@@ -21,8 +21,7 @@
 				<c:if test="${user == null}">
 					<form action="insertbanq" method="post">
 				</c:if>
-
-				<caption>
+                <caption>
 					<h2 style="color:black;">
 						<c:if test="${user != null}">
             			Edit Banquet Hall
@@ -66,8 +65,6 @@
 						value="<c:out value='${user.date}' />" class="form-control"
 						name="Date">
 				</fieldset>
-
-				
 
 				<button type="submit" class="btn btn-success">Save</button>
 				</form>

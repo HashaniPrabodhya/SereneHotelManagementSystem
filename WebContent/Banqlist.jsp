@@ -57,6 +57,6 @@
 
 			</table>
 		</div>
-	</div>
+<button><a href="Report.jsp">Print Report</a></button>
 </body>
 </html>
